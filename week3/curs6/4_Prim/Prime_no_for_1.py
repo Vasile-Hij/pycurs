@@ -1,22 +1,21 @@
 #!/usr/bin/env python3
 
-usr_input = int(input('Check if the number is prime: '))
-dividend = usr_input
+def main():
+    num = 25
+    num_div = 0
 
-def is_prime(dividend):
-    if dividend <= 3:
-        return dividend > 1
-    if dividend % 2 == 0 or dividend % 3 == 0:
-        return False
-    num_sqrt = 5
-    while num_sqrt ** 2 <= dividend:
-        if dividend % num_sqrt == 0 or dividend % (num_sqrt + 2) == 0:
-            return False
-        num_sqrt += 6
-    return True
+    divisor = 2
+    while divisor <= num // 2:
+        if num % divisor == 0:
+            num_div += 1
+            break
+        divisor += 1
+
+    if num_div == 0 and num >= 1:
+        print('The number is %d is prime' % num)
+    else:
+        print('The number is %d is not prime' % num)
 
 
-if (is_prime(dividend)):
-    print("The number %d isprime" % dividend)
-else:
-    print("The number %d is not prime" % dividend)
+if __name__ == "__main__":
+    main()

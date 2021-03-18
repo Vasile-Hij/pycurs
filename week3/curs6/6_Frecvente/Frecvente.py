@@ -36,7 +36,7 @@ def main():
             minimum_letter = character
 
     print(f'Most frequent letter', maximum_letter, maximum)
-    print(f'Less frequent letter', minimum_letter, minimum)
+    print(f'Least frequent letter', minimum_letter, minimum)
 
 
 if __name__ == "__main__":

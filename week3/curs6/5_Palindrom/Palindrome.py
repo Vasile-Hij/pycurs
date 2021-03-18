@@ -1,13 +1,12 @@
 #!/usr/bin/env python3
 
 def main():
-
-    user_input = input('Please insert the number: ')
-    if not user_input.isnumeric():
-        print('The number is valid: ')
-    else:
-        print('The number is not valid')
-        print('Try again')
+    while True:
+        user_input = input('Please insert the number: ')
+        if user_input.isnumeric():
+            break
+        else:
+            print('%s is not a valid number!' % user_input)
     usr_input = int(user_input)
     # store the initial value
     num_to_check = usr_input
@@ -21,12 +20,10 @@ def main():
         # floor divide the number leave out the last digit from number
         usr_input = usr_input // 10
 
-
-
     if num_to_check == reverse_num:
-        print('The number %d is palindrom' % num_to_check)
+        print('The number %d is palindrome' % num_to_check)
     else:
-        print('The number %d is not palindrom'% num_to_check)
+        print('The number %d is not palindrome' % num_to_check)
 
 
 if __name__ == "__main__":

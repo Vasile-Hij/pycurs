@@ -1,19 +1,28 @@
 #!/usr/bin/env python3
 
-usr_input = int(input('Verifica un numar daca este prim: '))
-
-dividend = usr_input
-# definim o variabila
-prim = False
-
-if dividend > 1:
-    for divisor in range(2, dividend):
-        if (dividend % divisor == 0):
-            prim = True
+def main():
+    while True:
+        usr_input = input('Check if the number is prime: ')
+        if usr_input.isnumeric():
             break
+        else:
+            print('The input character %s is not numeric' % usr_input)
 
-if prim:
-    print('Numarul %d nu este prim' % dividend)
-    print(divisor, 'inmultit cu', dividend//divisor, 'este egal cu', dividend)
-else:
-    print('Numarul %d este prim' % dividend)
+    dividend = int(usr_input)
+    prim = True
+
+    if dividend > 1:
+        for divisor in range(2, dividend):
+            if dividend % divisor == 0:
+                prim = False
+                break
+
+    if prim:
+        print('The number %d is prime' % dividend)
+    else:
+        print('The number %d is not prime' % dividend)
+        print(divisor, 'multiplied by', dividend // divisor, 'is', dividend)
+
+
+if __name__ == '__main__':
+    main()
