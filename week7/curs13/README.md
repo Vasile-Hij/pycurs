@@ -34,5 +34,5 @@ Avoiding an error it means to check if the file exists
 with:
 ```py
 import os 
-os.remove('demofile.txt') if os.path.exists('demofile.txt') else print('File is not found')
+os.remove('your_file.txt') if os.path.exists('your_file.txt') else print('File is not found')
 ```
